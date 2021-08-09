@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JKLU</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #ffffff;
+      }
+      img {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="logo.png" id="logo" alt="Logo" />
+
+    <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+    <script>
+      nextParticle = new NextParticle({
+        image: document.all.logo,
+        width: window.innerWidth,
+        height: window.innerHeight,
+        maxWidth: window.innerWidth * 0.8,
+        particleGap: 2
+      });
+      window.onresize = function () {
+        if (window.innerWidth > 600) {
+          nextParticle.width = window.innerWidth - 60;
+          nextParticle.height = window.innerHeight - 60;
+          nextParticle.start();
+        }
+      };
+    </script>
+  </body>
+</html>
